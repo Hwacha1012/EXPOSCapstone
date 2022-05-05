@@ -1,0 +1,122 @@
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #F8F8F8;
+}
+
+h1 {
+    color: #524F6C;
+    margin-top: 20px;
+    font-weight: 300;
+}
+.header {
+    color: #524F6C;
+    font-weight: 300;
+    font-size: 40px;
+    margin: auto;
+    margin-top: 5px;
+    width: 100%;
+    padding: 10px;
+    height: 50px;
+    text-align: center;
+}
+
+h2 {
+    font-weight: 100;
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: #524F6C;
+    display:inline-block;
+}
+
+legend {
+    display:inline-block;
+}
+/*************/
+/*    FORM   */
+/*************/
+
+.form-inline {
+    margin-bottom: 30px;
+}
+
+.form-control {
+    background: #E2DDD1;
+    border: 1px solid #D49999;
+    width: 250px;
+}
+
+.form-group label {
+    font-weight: 400;
+    margin-right: 10px;
+}
+
+.form-inline button, .btn-link:active {
+    border-left: 1px solid #888;
+    margin-left: 15px;
+    padding-left: 15px;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+}
+.form-inline button:hover, .btn-link:active, .btn-link:focus  {
+    border-left: 1px solid #888;
+    color: #8E7060;
+    text-decoration: none;
+    outline: none;
+}
+.form-inline button .glyphicon {
+    margin-right: 5px;
+}
+
+
+/***************/
+/*  BAR CHART  */
+/***************/
+
+.bar {
+    fill: #8E7060;
+}
+
+.axis {
+    font: 15px sans-serif;
+    fill: #333;
+    color: #1F1717;
+}
+
+.axis-title {
+    fill: #9C8B83;
+    font-size: 11px;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: none;
+    shape-rendering: crispEdges;
+    color: #1F1717;
+}
+
+.x-axis {
+    font-size: 12px;
+}
+
+.x-axis path {
+    display: none;
+}
+
+
+.flexBox {
+    display: flex;
+}
+
+.flexBox > div {
+    padding: 30px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 30px;
+}
+.textBox {
+    text-align: center;
+    color: #1F1717;
+}
