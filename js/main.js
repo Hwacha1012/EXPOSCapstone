@@ -55,7 +55,7 @@ var zoom2 = [2* width/3, 310, 200]
 var zoom3 = [width/3, 510, 200]
 var zoom4 = [2*width/3, 510, 200]
 var zoom5 = [width/2, 685, 250]
-var zoom6 = [width-100, height-200, 200]
+var zoom6 = [width/2, height/2, 200]
 /*
 svgDisplay = d3.select("#chart-area2").append("svg")
     .attr("width", width)
@@ -78,7 +78,7 @@ function updateVisual() {
         .attr("y", function (d, i){
             return (i * height)/5
         })
-        .attr("width", width+500)
+        .attr("width", width)
         .attr("height", height/5)
         .attr("fill", function (d){
             return d
@@ -170,7 +170,7 @@ function updateVisual() {
             } else if (i == 2 || i == 4) {
                 return (2 * svgWidth / 3);
             } else if (i == 6) {
-                return width - 100;
+                return width/2;
             }
 
         })
@@ -184,7 +184,7 @@ function updateVisual() {
             } else if (i == 5) {
                 return 705;
             } else if (i == 6) {
-                return height - 200;
+                return height/2;
             }
         })
         .on('click', function (d, i) {
@@ -335,7 +335,7 @@ function updateVisual() {
                 } else if (i == 2 || i == 4) {
                     return (2 * svgWidth / 3) - 55;
                 } else if (i == 6) {
-                    return width - 155;
+                    return width/2 - 55;
                 }
 
             })
@@ -355,7 +355,7 @@ function updateVisual() {
                     } else if (i == 5) {
                         return 655 - padding;
                     } else if (i == 6) {
-                        return height - 240 - padding;
+                        return (height/2)- 38- padding;
                     }
                 }
                 else{
@@ -370,7 +370,7 @@ function updateVisual() {
                     } else if (i == 5) {
                         return 705 - padding;
                     } else if (i == 6) {
-                        return height - 210 - padding;
+                        return (height/2)- 12- padding;
                     }
                 }
 
