@@ -109,6 +109,7 @@ function updateVisual() {
 
     g.selectAll("line").data(data).enter().append("line")
         .style("stroke", lightBlue)
+        .style("stroke-width", "15px")
         .attr("x1", function (d, i) {
             if (i == 0 || i == 1) {
                 return (svgWidth / 2)
