@@ -1,7 +1,8 @@
 
 
-var data = ["1", "2", "3", "4", "5", "6", "7"];
+var data = ["Intro", "Gender-Aligned Prisons", "Access to Healthcare", "Solutions", "Solutions", "How to Help", "Works Cited"];
 var lightBlue =  '#D7525B';
+
 //d3.select("#ranking-type").on("change", updateVisualization);
 
 // var _data = [];
@@ -32,6 +33,8 @@ updateVisualization();
 var padding = 20;
 var height = window.innerHeight * 1.25;
 var width = window.innerWidth;
+var currentTransform = [width / 2, height / 2, height];
+var end = [200, 200, 100];
 
 console.log(width)
 var margin = {top: 30, right: 30, left: 30, bottom: 50};
@@ -146,9 +149,80 @@ function updateVisualization() {
             }
         })
         .on('click', function(d, i) {
-            //console.log("hi there")
+            console.log("hi there")
             //trigger zoom in here
+            transition();
+
         })
+
+
+    const g = d3.select("#chart-area2").select("svg").select("g")
+
+    g.selectAll("circle")
+        .data(data)
+        .join("circle")
+        .attr("cx", function (d, i){
+            if (i==0 || i == 5){
+                return (svgWidth / 2);
+            }
+            else if (i == 1 || i == 3){
+                return (svgWidth/3);
+            }
+            else if (i == 2 || i == 4){
+                return (2* svgWidth/3);
+            }
+            else if (i==6){
+                return width -100;
+            }
+
+        })
+        .attr("cy", function (d, i){
+            if (i==0){
+                return 125;
+            }
+            else if (i==1 || i == 2){
+                return 300;
+            }
+            else if (i==3 || i == 4){
+                return 500;
+            }
+            else if (i==5){
+                return 675;
+            }
+            else if (i==6){
+                return height - 100;
+            }
+        })
+        .attr("r", function(d, i){
+            if (i==0 || i == 5){
+                return 100;
+            }
+            //return 0;
+            return 80;
+        })
+        //.attr("fill", (d, i) => d3.interpolateRainbow(i / 360))
+/*
+    function transition() {
+        const d = data[Math.floor(Math.random() * data.length)];
+        const i = d3.interpolateZoom(currentTransform, [...d, radius * 2 + 1]);
+
+        g.transition()
+            .delay(250)
+            .duration(i.duration)
+            .attrTween("transform", () => t => transform(currentTransform = i(t)))
+            .on("end", transition);
+    }
+
+    function transform([x, y, r]) {
+        return `
+      translate(${width / 2}, ${height / 2})
+      scale(${height / r})
+      translate(${-x}, ${-y})
+    `;
+    }
+*/
+   // return svg.call(transition).node();
+
 
     //circles.exit().remove();
     //boxes = d3.select("#chart-area2").select("svg").selectAll("foreignObject").data(data);
@@ -186,8 +260,11 @@ function updateVisualization() {
             if (i==0){
                 return 125-padding;
             }
-            else if (i==1 || i == 2){
-                return 300 -padding;
+            else if (i==1){
+                return 280 -padding;
+            }
+            else if (i==2){
+                return 290-padding;
             }
             else if (i==3 || i == 4){
                 return 500 -padding;
@@ -196,7 +273,7 @@ function updateVisualization() {
                 return 675 -padding;
             }
             else if (i==6){
-                return height - 100-padding;
+                return height - 110-padding;
             }
         })
         .attr("fill", "none")
@@ -206,6 +283,8 @@ function updateVisualization() {
         .style("font", "18px 'Helvetica Neue'")
         .style("color", "#1F1717")
         .style("background-color", lightBlue)
+        .style("text-align", "center")
+        .style("vertical-align", "middle")
         .html(function(d, i) {
             //return "hi";
             return d;
@@ -217,6 +296,16 @@ function updateVisualization() {
 
 
 }
+
+/*
+function transform([x, y, r]) {
+    return `
+      translate(${width / 2}, ${height / 2})
+      scale(${height / r})
+      translate(${-x}, ${-y})
+    `;
+}
+*/
 
 //console.log("here?")
 
